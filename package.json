@@ -1,0 +1,24 @@
+{
+  "name": "webapi-03-auth",
+  "version": "0.1.0",
+  "description": "Demo authentification et utilisation du JWT",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env app.js",
+    "dev": "node --env-file=.env --watch app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "WebAPI",
+    "JWT",
+    "DigitalCity"
+  ],
+  "author": "Aurélien St",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.0.1",
+    "morgan": "^1.10.0"
+  }
+}
