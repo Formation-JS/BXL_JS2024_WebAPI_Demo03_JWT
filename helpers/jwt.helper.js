@@ -3,7 +3,8 @@ import jwt from 'jsonwebtoken';
 export function generateJWT({ id, username, isAdmin }) {
     return new Promise((resolve, reject) => {
 
-        //? Donnée à stocker dans le token (Attention, elle seront accessible !)
+        //? Donnée à stocker dans le token  (Mapping : Business -> Token)
+        //? Attention, elle seront accessible !
         const data = {
             id,
             name: username, 
@@ -31,6 +32,35 @@ export function generateJWT({ id, username, isAdmin }) {
 
             // Envoi du token
             resolve(token);
+        });
+    });
+}
+
+export function decodeJWT(token) {
+    return new Promise((resolve, reject) => {
+
+        //? Clef de signature du token
+        const secret = process.env.JWT_SECRET;
+
+        //? Les options de validation
+        const options = {
+            issuer: process.env.JWT_ISSUER,
+            audience: process.env.JWT_AUDIENCE
+        }
+
+        //? Validation
+        jwt.verify(token, secret, options, (error, data) => {
+            if(error) {
+                reject(error);
+                return;
+            }
+
+            //? Récuperation des données du token  (Mapping : Token -> Business)
+            resolve({
+                id: data.id,
+                username: data.name,
+                isAdmin: data.role === 'admin'
+            });
         });
     });
 }

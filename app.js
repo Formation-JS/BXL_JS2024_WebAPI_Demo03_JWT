@@ -2,6 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import mainRouter from './routers/index.js';
+import { authentificationMiddleware } from './middlewares/auth.middleware.js';
 
 const { NODE_ENV, PORT } = process.env;
 
@@ -17,6 +18,9 @@ app.use(cors());
 
 //? Gestion du body (JSON)
 app.use(express.json());
+
+//? Gestion de l'authentification
+app.use(authentificationMiddleware());
 
 //! Routing
 app.use('/api', mainRouter);
