@@ -1,6 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
+import mainRouter from './routers/index.js';
 
 const { NODE_ENV, PORT } = process.env;
 
@@ -18,7 +19,7 @@ app.use(cors());
 app.use(express.json());
 
 //! Routing
-
+app.use('/api', mainRouter);
 
 //! Démarrage de la WebAPI
 app.listen(PORT, () => {
