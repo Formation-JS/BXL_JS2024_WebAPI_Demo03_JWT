@@ -1,3 +1,5 @@
+import { generateJWT } from "../helpers/jwt.helper.js";
+
 // Fake data pour la démo
 const members = [
     {
@@ -17,7 +19,7 @@ const members = [
 
 const authController = {
 
-    login: (req, res) => {
+    login: async (req, res) => {
         const { username, password } = req.body;
 
         //! Validation des données 
@@ -35,7 +37,7 @@ const authController = {
         }
 
         //TODO Générer le JWT
-        const token = 'JWT...';
+        const token = await generateJWT(member);
 
         //! Réponse à l'utilisateur
         res.status(200).json({ token });
