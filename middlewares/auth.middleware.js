@@ -30,3 +30,28 @@ export function authentificationMiddleware() {
             });
     };
 }
+
+export function authorizeMiddleware(onlyAdmin = false) {
+
+    return function (req, res, next) {
+
+        //! Récuperation du token (Créer via "authentificationMiddleware")
+        const token = req.token;
+
+        //! Vérification de la présence du token
+        //? Si aucun donnée -> 401 Unauthorized
+        if (!token) {
+            res.sendStatus(401);
+            return;
+        }
+
+        //! Vérification si on possede le role Admin
+        //? Si ce n'est pas le cas -> 403 Forbidden
+        if (onlyAdmin && !token.isAdmin) {
+            res.sendStatus(403);
+            return;
+        }
+
+        next();
+    };
+}
