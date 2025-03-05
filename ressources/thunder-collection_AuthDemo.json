@@ -1,0 +1,69 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "AuthDemo",
+    "collectionId": "ce75bf19-d5c6-453f-8381-e9e7e00a35eb",
+    "dateExported": "2025-03-05T09:40:12.976Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "e658932e-946a-451f-b10e-4056c8df8946",
+            "colId": "ce75bf19-d5c6-453f-8381-e9e7e00a35eb",
+            "containerId": "",
+            "name": "Login",
+            "url": "http://localhost:4002/api/auth/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2025-03-05T09:38:47.550Z",
+            "modified": "2025-03-05T09:38:47.550Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"della\",\n  \"password\": \"Test1234=\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "3506e37f-49dc-433b-8a77-a2641040c1d3",
+            "colId": "ce75bf19-d5c6-453f-8381-e9e7e00a35eb",
+            "containerId": "",
+            "name": "Public",
+            "url": "http://localhost:4002/api/demo/public",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2025-03-05T09:39:01.448Z",
+            "modified": "2025-03-05T09:39:01.448Z",
+            "headers": []
+        },
+        {
+            "_id": "3364c69d-9db1-4805-9b0b-784e511934ed",
+            "colId": "ce75bf19-d5c6-453f-8381-e9e7e00a35eb",
+            "containerId": "",
+            "name": "Private",
+            "url": "http://localhost:4002/api/demo/private",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2025-03-05T09:39:10.360Z",
+            "modified": "2025-03-05T09:39:10.360Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImRlbGxhIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzQxMDk3NTAzLCJleHAiOjE3NDExMzM1MDMsImF1ZCI6IkRpZ2l0YWxDaXR5X0pTMjAyNF9BdWRpZW5jZSIsImlzcyI6IkRpZ2l0YWxDaXR5X0pTMjAyNF9Jc3N1ZXIifQ.WTsV-ptYLhL8nvLKOnonjd-19Zalv9kmPEmdKqnFS5E8tiliXxbyOtuviSmJ64HU85j5ahk1ESrJH37xu29ZRA"
+                }
+            ]
+        },
+        {
+            "_id": "10bf98b4-dfcc-4fd2-b206-9d810d3baad8",
+            "colId": "ce75bf19-d5c6-453f-8381-e9e7e00a35eb",
+            "containerId": "",
+            "name": "Admin",
+            "url": "http://localhost:4002/api/demo/admin",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2025-03-05T09:39:23.056Z",
+            "modified": "2025-03-05T09:39:23.056Z",
+            "headers": []
+        }
+    ],
+    "ref": "hyzUj9K03j5Rmhm6twBzm9OoD1z7w41TcFDHU35gJpodbnGiG-7az4X24OdYu9vVx3c268OjQBCxezOvOfVfrQ"
+}
